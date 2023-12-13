@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>speak</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <style>
+   body{
+    height: 100vh;
+    width: auto;
+    margin: 0;
+    background: linear-gradient(blue,black);
+    background-repeat: no-repeat;
+   }
+   .container{
+    position: absolute;
+    left: 40%;
+    top: 40%;
+   }
+       
+        input[type="text"] {
+          padding: 10px;
+          font-size: 16px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+    
+    
+        button {
+          padding: 10px 20px;
+          font-size: 16px;
+          background-color: #007bff;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+    
+    
+        button:hover {
+          background-color: #0056b3;
+        }
+      </style>
+</head>
+<body>
+    <div class="container">
+     <input type="text">
+
+    <button>speak</button>
+</div>
+   
+    <script>
+    var textarea=document.querySelector("input");
+    var button=document.querySelector("button");
+    button.addEventListener("click",()=>{
+        var sui= new SpeechSynthesisUtterance(textarea.value);
+        window.speechSynthesis.speak(sui);
+    })
+    
+    </script>
+</body>
+</html>
